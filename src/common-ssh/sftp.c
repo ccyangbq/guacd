@@ -312,12 +312,12 @@ static int guac_common_ssh_sftp_blob_handler(guac_user* user,
     LIBSSH2_SFTP_HANDLE* file = (LIBSSH2_SFTP_HANDLE*) stream->data;
 
     /* Attempt write */
-    if (libssh2_sftp_write(file, data, length) == length) {
-        guac_user_log(user, GUAC_LOG_DEBUG, "%i bytes written", length);
-        guac_protocol_send_ack(user->socket, stream, "SFTP: OK",
-                GUAC_PROTOCOL_STATUS_SUCCESS);
-        guac_socket_flush(user->socket);
-    }
+//    if (libssh2_sftp_write(file, data, length) == length) {
+//        guac_user_log(user, GUAC_LOG_DEBUG, "%i bytes written", length);
+//        guac_protocol_send_ack(user->socket, stream, "SFTP: OK",
+//                GUAC_PROTOCOL_STATUS_SUCCESS);
+//        guac_socket_flush(user->socket);
+//    }
 
     /* Inform of any errors */
     else {
