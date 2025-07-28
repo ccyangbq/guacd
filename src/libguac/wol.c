@@ -314,13 +314,13 @@ int guac_wol_wake(const char* mac_addr, const char* broadcast_addr,
     unsigned int dest_mac[6];
     
     /* Parse mac address and return with error if parsing fails. */
-    if (sscanf(mac_addr, "%x:%x:%x:%x:%x:%x",
-            &(dest_mac[0]), &(dest_mac[1]), &(dest_mac[2]),
-            &(dest_mac[3]), &(dest_mac[4]), &(dest_mac[5])) != 6) {
-        guac_error = GUAC_STATUS_INVALID_ARGUMENT;
-        guac_error_message = "Invalid argument for Wake-on-LAN MAC address";
-        return -1;
-    }
+//    if (sscanf(mac_addr, "%x:%x:%x:%x:%x:%x",
+//            &(dest_mac[0]), &(dest_mac[1]), &(dest_mac[2]),
+//            &(dest_mac[3]), &(dest_mac[4]), &(dest_mac[5])) != 6) {
+//        guac_error = GUAC_STATUS_INVALID_ARGUMENT;
+//        guac_error_message = "Invalid argument for Wake-on-LAN MAC address";
+//        return -1;
+//    }
     
     /* Generate the magic packet. */
     __guac_wol_create_magic_packet(wol_packet, dest_mac);
